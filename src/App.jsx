@@ -20,10 +20,13 @@ const Button = ({ handleClick, text }) => (
   </button>
 )
 
+
 const App = () => {
   const [left, setLeft] = useState(0)
   const [right, setRight] = useState(0)
   const [allClicks, setAll] = useState([])
+
+  const [value,setValue] = useState(10)
 
   const handleLeftClick = () => {
     setAll(allClicks.concat('L'))
@@ -34,7 +37,10 @@ const App = () => {
     setAll(allClicks.concat('R'))
     setRight(right + 1)
   }
-
+  const handleClick = () =>{
+  console.log('clicked the button')
+  setValue(0)
+}
   return (
     <div>
       {left}
@@ -42,6 +48,9 @@ const App = () => {
       <Button handleClick={handleRightClick} text='right' />
       {right}
       <History allClicks={allClicks} />
+      <hr></hr>
+      {value}
+      <button onClick={handleClick}>button</button>
     </div>
   )
 }
