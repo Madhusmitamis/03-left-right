@@ -41,6 +41,12 @@ const App = () => {
   console.log('clicked the button')
   setValue(0)
 }
+
+  const hello = (who) => () => {
+    console.log('hello', who)
+  }
+  
+
   return (
     <div>
       {left}
@@ -51,6 +57,11 @@ const App = () => {
       <hr></hr>
       {value}
       <button onClick={handleClick}>button</button>
+      <hr></hr>
+      {value}
+      <button onClick={hello('world')}>button</button>
+      <button onClick={hello('react')}>button</button>
+      <button onClick={hello('function')}>button</button>
     </div>
   )
 }
