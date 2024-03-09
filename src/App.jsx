@@ -14,6 +14,8 @@ const History = (props) => {
     </div>
   )
 }
+const Display = props => <div>{props.value}</div>
+
 const Button = (props) => (
   <button onClick={props.handleClick}>
     {props.text}
@@ -69,7 +71,7 @@ const App = () => {
       <button onClick={hello('function')}>button</button>
       <hr></hr>
 
-      {value}
+      <Display value={value} />
       <Button handleClick={() => setToValue(1000)} text="thousand" />
       <Button handleClick={() => setToValue(0)} text="reset" />
       <Button handleClick={() => setToValue(value + 1)} text="increment" />
